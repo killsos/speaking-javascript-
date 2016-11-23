@@ -173,4 +173,47 @@
   }
 
   强制类型转换
-  
+  转换成布尔值 数字 字符串 对象的函数
+  Boolean()
+  假值：
+      undefined
+      null
+      false
+      0
+      NaN
+      ''
+  Number()
+    undefined    NaN
+    null         0
+    false        0
+    true         1
+    字符串会解析
+    对象先转换为原始值,然后在换为数字
+
+  String()
+    null          'null'
+    undefined     'undefined'
+    false         'false'
+    true          'true'
+    console.log(String({name:'ql'}));   //   [object Object]
+
+  Object()
+
+  具名函数表达式
+  具名函数表达式的名字只能在函数表达式内部被访问
+  07.js
+
+
+  IIFE
+
+  1 前缀运算符
+  !function(){}();
+
+  voidfunction(){}();
+
+  2 IIFE 预内置表达式上下文 09.js
+
+  in                            枚举自有和继承属性
+  forin                         枚举自有和继承属性
+  Object.keys()                 枚举自有属性   数组
+  Object.getOwnpropertyNames()  所有自有属性   数组
