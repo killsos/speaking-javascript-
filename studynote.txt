@@ -32,3 +32,35 @@
        *
        *js
        */
+4 变量
+  区分大小写
+  第一个字符 任意Unicode字符(不包括数字) $ 下划线
+
+5 原始值与对象
+  原始值: 布尔值  数字 字符串 null undefined
+  其他值是对象
+
+  对象比较是通过内存地址
+
+  原始值比较是通过编码值
+
+  typeof        主要用于检查原始值
+
+  instanceof    主要用于检查对象
+
+
+  typeof的结果:
+  undefined            undefined
+  null                 object
+  布尔值                boolean
+  数字值                number
+  字符串                string
+  函数                  function
+  对象                  object
+
+  instanceof用法:
+  value instanceof constructor
+
+  如果value是一个通过constructor构造器创建的对象
+
+  
