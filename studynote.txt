@@ -63,4 +63,35 @@
 
   如果value是一个通过constructor构造器创建的对象
 
-  
+  假值
+  undefined
+  null
+  false
+  0
+  NaN
+  ''
+
+  闭包
+  函数以及它所连接的周围作用域中的变量即为闭包
+
+  IIFE:引入一个新的作用域
+  (function(){ // open IIFE
+
+  }()）// close IIFE
+
+  forEach
+  forEach 方法按升序为数组中含有效值的每一项执行一次callback 函数，那些已删除（
+  使用delete方法等情况）或者从未赋值的项将被跳过
+  （但不包括那些值为 undefined 的项）。
+  callback 函数会被依次传入三个参数：
+  数组当前项的值
+  数组当前项的索引
+  数组对象本身
+  如果给forEach传递了thisArg 参数，它将作为 callback 函数的执行上下文，
+  类似执行如下函数callback.call(thisArg, element, index, array)。
+  如果 thisArg 值为 undefined 或 null，函数的 this 值取决于当前执行环境是否为严格模式
+  （严格模式下为 undefined，非严格模式下为全局对象）。
+
+  forEach 遍历的范围在第一次调用 callback 前就会确定。调用forEach 后添加到
+  数组中的项不会被 callback 访问到。如果已经存在的值被改变，
+  则传递给 callback 的值是 forEach 遍历到他们那一刻的值。已删除的项不会被遍历到。
