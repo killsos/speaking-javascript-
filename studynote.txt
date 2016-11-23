@@ -99,3 +99,78 @@
   eval
   eval在语句的上下文中解析它的参数,如果希望eval返回一个对象,需要用小括号将对象字面量括起来
   04.js
+
+  严格模式：
+    变量必须声明
+    所有函数必须在顶级作用域声明,这就意味着不能在块内声明函数
+    如果消除这个限制,通过函数声明式
+    arguments对象拥有更少的属性
+    无方法的函数中this的值为undefined
+    对属性的非法操作会抛出异常
+    例如对于只读属性的设定操作就抛出异常
+    不可以删除不可设置属性
+    with语句不能使用
+    没有八进制数字
+
+  undefined
+    访问未初始化的变量
+    缺失的参数
+    缺失的属性
+    函数隐式返回
+
+  null
+    null是原型链最顶端
+    Object.getPrototypeOf(Object.prototype)  // null
+
+    当字符串没有匹配到正则表达式的结果 reg.exec()  // null
+
+    选择器没有匹配的元素                         // null
+
+    Number(undefined)      // NaN
+
+    5 + undefined          // NaN
+
+    Number(null)           // 0
+
+    5 + null               // 5
+
+    void 0                 // undefined
+
+  原始值的包装与去包装
+  包装
+  new Boolean(true)
+  new Number(123)
+  new String('abc')
+
+  去包装
+  通过调用valueOf()来去包装
+  new Boolean(true).valueOf()
+  new Number(123).valueOf()
+  new String('abc').valueOf()
+
+  将包装对象转换为原始值时只能正确提取数字和字符串,而布尔值不能
+  Boolean(new Boolean(true)) // true
+  Number(new Number(123))    // 123
+  String(new String('abc'))  // 'abc'
+
+  原始值从包装器借调方法
+  原始值没有私有方法,但是他们会从各自的包装器中借调方法
+  ‘abc’.charAt === String.prototype.charAt  // true
+
+  宽松模式
+  原始值在运行过程中转换为包装器
+  String.prototype.sloppyMethod = function(){
+    console.log(typeof this); // object
+    console.log(this instanceof String); // true
+  }
+
+  严格模式
+  原始值在运行过程中转换为包装器
+  String.prototype.strictMethod = function(){
+    'use strict';
+    console.log(typeof this); // string
+    console.log(this instanceof String); // false
+  }
+
+  强制类型转换
+  
